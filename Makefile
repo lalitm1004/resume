@@ -8,18 +8,20 @@ TMP_DIR = tmp
 
 RESUMES = resume-personal resume-university
 
-.PHONY: all build clean
+.PHONY: all build clean FORCE
 
 all: build
 
 build: $(RESUMES:%=$(OUT_DIR)/%.pdf)
 
-$(OUT_DIR)/%.pdf: $(SRC_DIR)/%.tex
+$(OUT_DIR)/%.pdf: $(SRC_DIR)/%.tex FORCE
 	@mkdir -p $(TMP_DIR) $(OUT_DIR)
 	@rm -rf $(TMP_DIR)/*
 	$(LATEX_COMPILER) $(LATEX_FLAGS) -output-directory=$(TMP_DIR) $<
 	@cp $(TMP_DIR)/$*.pdf $@
 	@rm -rf $(TMP_DIR)
+
+FORCE:
 
 watch:
 	@mkdir -p $(TMP_DIR) $(OUT_DIR)

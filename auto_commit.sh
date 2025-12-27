@@ -4,6 +4,10 @@ TIMESTAMP=$(date +"%Y-%m-%d %H:%M:%S")
 
 make build
 make clean
+
 git add .
-git commit -m "resume: update at $TIMESTAMP"
+
+read -p "Enter a message to append to the commit: " USER_MSG
+git commit -m "resume: update at $TIMESTAMP - $USER_MSG"
+
 git push origin main
