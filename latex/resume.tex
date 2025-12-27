@@ -1,0 +1,238 @@
+\documentclass[letterpaper,8pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\input{glyphtounicode}
+\usepackage{fontawesome5}
+
+%----------FONT OPTIONS----------
+% sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} & Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} & Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+    \textbf{\Huge \scshape Lalit Maurya} \\ \vspace{1pt}
+    \small +91-6364713301
+    $|$
+    \small Bengaluru, India
+    $|$
+    \ifdefined\UNI
+        \href{mailto:lm742@snu.edu.in}{\underline{
+            lm742@snu.edu.in
+            \vphantom{/}
+        }}
+    \else
+        \href{mailto:lalitm1004@gmail.com}{\underline{
+            lalitm1004@gmail.com
+        }}
+    \fi
+    $|$
+    \href{https://linkedin.com/in/lalitm1004}{\underline{
+        linkedin.com/in/lalitm1004
+    }}
+    $|$
+    \href{https://github.com/lalitm1004}{\underline{
+        github.com/lalitm1004
+    }}
+\end{center}
+
+%-----------PROFILE-------------
+\section{Profile}
+Computer Science undergraduate with experience in full-stack development and AI/ML, skilled in Rust, Python, and modern web technologies. Passionate about building scalable, real-world solutions.
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Shiv Nadar Institution of Eminence (CGPA 8.08)}{Delhi NCR, India}
+      {Bachelor of Technology in Computer Science and Engineering}{Aug. 2023 -- Expected May 2027}
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {Teaching Assistant - Computer Organisation and Architecture}
+      {Aug 2025 -- Nov 2025}
+      {On Campus Job}{Shiv Nadar Institution of Eminence}
+      \vspace{2pt}
+      % \resumeItemListStart
+      %   \resumeItem{Assisted the instructors of the course \emph{CSD211 - Computer Organisation and Architecture} by supervising labs, providing supplementary teaching during tutorial sessions, grading assignments and solving student doubts}
+      % \resumeItemListEnd
+
+    \resumeSubheading
+      {Team Lead, AI/ML Team}{March 2025 -- Present}
+      {Google Developer Group}{Shiv Nadar Institution of Eminence}
+      \resumeItemListStart
+        \resumeItem{Created the official AI/ML team under GDG-SNIoE, initiating and managing bi-weekly meetings to ensure project alignment and timely progress}
+        \resumeItem{Directing a 13-member team of varying skill levels and diverse interests in real-world AI/ML projects.}
+        \resumeItem{Spearheading the development of a campus-wide technical newsletter to showcase AI/ML projects and foster a culture of innovation and knowledge-sharing.}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {Hackathon Director, @ping}{April 2024 -- Feb 2025}
+      {Google Developer Group}{Shiv Nadar Institution of Eminence}
+      \resumeItemListStart
+        \resumeItem{Created and led @ping, a campus-wide mini-hackathon series fostering an active development culture among fellow students, amassing 100+ participants and learners over a year}
+        \resumeItem{Managed a 12-member team to develop a full-stack submissions platform using Supabase, and SvelteKit}
+        \resumeItem{Designed and implemented a streamlined process for project submissions, improving user experience}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      
+      \resumeProjectHeading
+        {\href{https://github.com/lalitm1004/oxigrad/tree/autograd}{\underline{\textbf{oxigrad-autograd} \faLink}} $|$ \emph{Rust, Python, PyO3, Maturin}}{Jul 2025}
+        \vspace{-8pt}
+        \resumeItemListStart
+        \resumeItem{Developed a scalar-valued auto-differentiation engine in Rust for memory-safety and performance}
+        \resumeItem{Implemented Python bindings using PyO3 and Maturin for seamless integration across languages}
+        \resumeItem{Implemented forward and backward passes, supporting automatic differentiation and gradient computation through dynamic computation graphs}
+        \resumeItem{Integrated common activation functions (Sigmoid, ReLU, Softmax) and loss functions (MSE, Cross Entropy)}
+        \resumeItem{Published to PyPI with support for Python 3.9+, enabling simple installation via \texttt{pip} or \texttt{uv}}
+        \resumeItemListEnd
+
+      \resumeProjectHeading
+        {\href{https://github.com/icingtea/skin_detection}{\underline{\textbf{Skin Detection Without Color Information} \faLink}} $|$ \emph{OpenCV, Scikit-learn, NumPy}}{Feb 2025 - May 2025}
+        \vspace{-10pt}
+        \resumeItemListStart
+        \resumeItem{Implemented grayscale skin detection using facial priors and texture features from a WACV 2017 paper}
+        \resumeItem{Processed and curated a HELEN-derived dataset with ground-truth skin segmentation masks}
+        \resumeItem{Extracted LBP, grayscale stats, lacunarity, and landmark-based features}
+        \resumeItem{Developed a region growing algorithm seeded by face-based intensity priors}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+        {\href{https://github.com/lalitm1004/cogito-tutor}{\underline{\textbf{CogitoTutor} \faLink}} $|$ \emph{FastAPI, OpenAI, PostgreSQL, SvelteKit}}{Jan 2025}
+        \vspace{-8pt}
+        \resumeItemListStart
+        \resumeItem{Led a 3-member team to build an AI-powered tutor, winning 1st place at an ACM-W hackathon}
+        \resumeItem{Developed a responsive, interactive UI to deliver dynamic quizzes and flashcards based on user performance}
+        \resumeItem{Integrated OpenAI API with the frontend to enable real-time generation and personalized learning feedback}
+        \resumeItem{Built a full-stack application with FastAPI and PostgreSQL, ensuring seamless data flow between backend services and frontend interfaces}
+        \resumeItemListEnd
+
+    \resumeProjectHeading
+    {\href{https://github.com/lalitm1004/UniSync/tree/f6d215bd40ee016976aa540a82d0f5161351561f}{\underline{\textbf{UniSync} \faLink}} $|$ \emph{Python, Selenium, Google Calendar API}}{January 2025}
+        \vspace{-8pt}
+        \resumeItemListStart
+        \resumeItem{Developed a python-based tool to streamline university timetable management by scraping data from the ERP system and syncing it with Google Calendar}
+        \resumeItem{Leveraged Python, Selenium, and Google Calendar API to automate data extraction and integration, ensuring a seamless user experience.}
+        \resumeItemListEnd
+
+    \resumeSubHeadingListEnd
+
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+        \textbf{Languages}: Rust, JavaScript, TypeScript, Python, Java, C, C++, SQL, HTML, CSS \\
+        \textbf{Frameworks \& Libraries}: React, Next.js, SvelteKit, Flask, FastAPI, PyTorch, Poem-OpenAPI \\
+        \textbf{Tools \& Platforms}: Git, GitHub, Supabase, Docker, Google Cloud Platform (GCP), Linux, Helix, Neovim, uv \\
+        \textbf{Databases \& ORMS}: MySQL, PostgreSQL, MongoDB, Prisma, SQLx\\
+        \textbf{Technologies \& Protocols}: Node.js, REST APIs, WebSockets, Selenium}}
+\end{itemize}
+
+
+%-------------------------------------------
+\end{document}
