@@ -1,5 +1,6 @@
 LATEX_COMPILER = latexmk
 LATEX_FLAGS = -f -pdf
+WATCH_FLAGS = -pvc
 
 SRC_DIR = latex
 OUT_DIR = public
@@ -11,14 +12,30 @@ RESUMES = resume-personal resume-university
 
 all: build
 
-build: $(RESUMES:%=$(OUT_DIR)/%.pdf)
+build: $(OUT_DIR)/lalit_maurya_resume.pdf $(OUT_DIR)/lalit_maurya_resume_uni.pdf $(OUT_DIR)/_redirects
 
-$(OUT_DIR)/%.pdf: $(SRC_DIR)/%.tex
+$(OUT_DIR)/lalit_maurya_resume.pdf: $(SRC_DIR)/resume-personal.tex
 	@mkdir -p $(TMP_DIR) $(OUT_DIR)
 	@rm -rf $(TMP_DIR)/*
-	$(LATEX_COMPILER) $(LATEX_FLAGS) -output-directory=$(TMP_DIR) $<
-	@cp $(TMP_DIR)/$*.pdf $@
+	$(LATEX_COMPILER) $(LATEX_FLAGS) -output-directory=$(TMP_DIR) $(SRC_DIR)/resume-personal.tex
+	@cp $(TMP_DIR)/resume-personal.pdf $@
 	@rm -rf $(TMP_DIR)
+
+$(OUT_DIR)/lalit_maurya_resume_uni.pdf: $(SRC_DIR)/resume-university.tex
+	@mkdir -p $(TMP_DIR) $(OUT_DIR)
+	@rm -rf $(TMP_DIR)/*
+	$(LATEX_COMPILER) $(LATEX_FLAGS) -output-directory=$(TMP_DIR) $(SRC_DIR)/resume-university.tex
+	@cp $(TMP_DIR)/resume-university.pdf $@
+	@rm -rf $(TMP_DIR)
+
+$(OUT_DIR)/_redirects:
+	@mkdir -p $(OUT_DIR)
+	@echo "/  /lalit_maurya_resume.pdf  200" > $@
+	@echo "/uni  /lalit_maurya_resume_uni.pdf  200" >> $@
+
+watch:
+	@mkdir -p $(TMP_DIR) $(OUT_DIR)
+	$(LATEX_COMPILER) $(LATEX_FLAGS) $(WATCH_FLAGS) -outdir=$(TMP_DIR) $(SRC_DIR)/resume.tex
 
 clean:
 	@rm -rf $(TMP_DIR)
