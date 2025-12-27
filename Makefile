@@ -1,20 +1,24 @@
-TMP = tmp
+LATEX_COMPILER = latexmk
+LATEX_FLAGS = -f -pdf
 
-.PHONY: build clean
+SRC_DIR = latex
+OUT_DIR = public
+TMP_DIR = tmp
 
-build: resume-personal resume-university clean
+RESUMES = resume-personal resume-university
 
-resume-personal:
-	mkdir -p $(TMP)
-	rm -rf ${TMP}/*
-	latexmk -f -pdf -output-directory=$(TMP) latex/resume-personal.tex
-	cp $(TMP)/resume-personal.pdf ./resume-personal.pdf
+.PHONY: all build clean
 
-resume-university:
-	mkdir -p $(TMP)
-	rm -rf ${TMP}/*
-	latexmk -f -pdf -output-directory=$(TMP) latex/resume-university.tex
-	cp $(TMP)/resume-university.pdf ./resume-university.pdf
+all: build
+
+build: $(RESUMES:%=$(OUT_DIR)/%.pdf)
+
+$(OUT_DIR)/%.pdf: $(SRC_DIR)/%.tex
+	@mkdir -p $(TMP_DIR) $(OUT_DIR)
+	@rm -rf $(TMP_DIR)/*
+	$(LATEX_COMPILER) $(LATEX_FLAGS) -output-directory=$(TMP_DIR) $<
+	@cp $(TMP_DIR)/$*.pdf $@
+	@rm -rf $(TMP_DIR)
 
 clean:
-	rm -rf $(TMP) *.fdb_latexmk *.fls *.log *.aux
+	@rm -rf $(TMP_DIR)
