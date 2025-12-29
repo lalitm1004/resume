@@ -32,6 +32,8 @@
 % \usepackage{CormorantGaramond}
 % \usepackage{charter}
 
+% leftmargin for indented items
+\setlist[itemize]{leftmargin=0.15in, labelsep=0.3em}
 
 \pagestyle{fancy}
 \fancyhf{} % clear all header and footer fields
@@ -40,11 +42,12 @@
 \renewcommand{\footrulewidth}{0pt}
 
 % Adjust margins
-\addtolength{\oddsidemargin}{-0.5in}
-\addtolength{\evensidemargin}{-0.5in}
-\addtolength{\textwidth}{1in}
-\addtolength{\topmargin}{-.5in}
-\addtolength{\textheight}{1.0in}
+\addtolength{\oddsidemargin}{-0.65in}
+\addtolength{\evensidemargin}{-0.65in}
+\addtolength{\textwidth}{1.325in}
+
+\addtolength{\topmargin}{-0.75in}
+\addtolength{\textheight}{1.5in}
 
 \urlstyle{same}
 
@@ -70,7 +73,7 @@
 
 \newcommand{\resumeSubheading}[4]{
   \vspace{-2pt}\item
-    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}[t]{l@{\extracolsep{\fill}}r}
       \textbf{#1} & #2 \\
       \textit{\small#3} & \textit{\small #4} \\
     \end{tabular*}\vspace{-7pt}
@@ -78,14 +81,14 @@
 
 \newcommand{\resumeSubSubheading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
       \textit{\small#1} & \textit{\small #2} \\
     \end{tabular*}\vspace{-7pt}
 }
 
 \newcommand{\resumeProjectHeading}[2]{
     \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
       \small#1 & #2 \\
     \end{tabular*}\vspace{-7pt}
 }
@@ -94,10 +97,17 @@
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0in, label={}]}
 \newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
 \newcommand{\resumeItemListStart}{\begin{itemize}}
 \newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+% To align underline on links without a /
+\newsavebox{\slashbox}
+\sbox{\slashbox}{/}
+\newcommand{\phantomSlash}{%
+  \vrule height\ht\slashbox depth\dp\slashbox width0pt%
+}
 
 %-------------------------------------------
 %%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -120,7 +130,7 @@
     \ifdefined\UNI
         \href{mailto:lm742@snu.edu.in}{\underline{
             lm742@snu.edu.in
-            \vphantom{/}
+            \phantomSlash
         }}
     \else
         \href{mailto:lalitm1004@gmail.com}{\underline{
@@ -134,6 +144,11 @@
     $|$
     \href{https://github.com/lalitm1004}{\underline{
         github.com/lalitm1004
+    }}
+    $|$
+    \href{https://lm04.me}{\underline{
+        lm04.me
+        \phantomSlash
     }}
 \end{center}
 
